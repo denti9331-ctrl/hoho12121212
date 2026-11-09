@@ -1,0 +1,31 @@
+/* Effects follow each original illustration in its own cover-sized coordinate space. */
+.tale-environment-plane{position:absolute;pointer-events:none;overflow:hidden;isolation:isolate;}.tale-environment-plane *{position:absolute;pointer-events:none;animation-play-state:paused!important;}.is-in-view:not(.is-document-hidden) .is-active .tale-environment-plane *{animation-play-state:running!important;}
+.story-journey .tale-mist,.story-journey .tale-sparks{display:none;}
+.tale-scene .tale-photo{animation:none;transform:translate(var(--pointer-x),var(--pointer-y)) scale(1.055);}
+.tale-hearth-glow{width:23%;height:42%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,#ef9e455e,transparent 67%);mix-blend-mode:screen;animation:hearth-flicker 3.7s ease-in-out infinite;}
+.tale-hearth-flame{width:3.2%;height:5%;transform-origin:50% 100%;translate:-50% -68%;background:radial-gradient(ellipse at 50% 75%,#ffe3a9b0,#e6a14666 35%,transparent 70%);mix-blend-mode:screen;filter:blur(2px);animation:fire-tip 1.6s ease-in-out infinite alternate;}
+.tale-open-door-light{width:48%;height:54%;translate:-84% -10%;background:linear-gradient(135deg,transparent 18%,#f4e0af0a 32%,#f4dfab33 46%,transparent 65%);clip-path:polygon(83% 0,100% 4%,76% 100%,0 100%);mix-blend-mode:screen;animation:door-daylight 12s ease-in-out infinite alternate;}
+.dawn .tale-open-door-light{background:linear-gradient(135deg,transparent 18%,#ffedc512 32%,#ffdfab55 46%,transparent 65%);animation-duration:17s;}
+.tale-cottage-window{width:10%;height:26%;translate:-50% -50%;background:radial-gradient(ellipse,#ffd98b77,#ffc97818 50%,transparent 73%);mix-blend-mode:screen;animation:cottage-lantern 4.3s ease-in-out infinite;}
+.tale-moon-window{width:15%;height:40%;translate:-50% -50%;background:radial-gradient(ellipse,#becbe52b,transparent 70%);mix-blend-mode:screen;animation:moon-clouds 13s ease-in-out infinite alternate;}
+.tale-moon-ray{left:52%;top:25%;width:44%;height:66%;background:linear-gradient(125deg,transparent 39%,#b3bfd721 49%,#cbd5ea32 54%,transparent 68%);clip-path:polygon(92% 0,100% 24%,35% 100%,0 92%);mix-blend-mode:screen;animation:moon-clouds 13s ease-in-out infinite alternate;}
+.tale-path-mist{left:-18%;top:59%;width:136%;height:34%;background:radial-gradient(ellipse,#b8c6d22d,transparent 66%);filter:blur(9px);animation:forest-fog-flow 19s ease-in-out infinite alternate;}.mist-far{top:44%;left:8%;width:100%;height:26%;opacity:.45;animation-duration:26s;animation-direction:alternate-reverse;}.mist-near{opacity:.6;}
+.tale-scene-air{inset:0;overflow:hidden;}.tale-scene-air i{left:var(--x);top:var(--y);opacity:0;animation:scene-dust var(--duration) linear var(--delay) infinite;}.tale-window-dust{width:2px;height:2px;background:#e5d7b9;border-radius:50%;box-shadow:0 0 3px #e9d8b955;}.bedroom .tale-window-dust{background:#bac9df;box-shadow:none;}.cottage .tale-window-dust{opacity:0;width:1.5px;height:1.5px;}.tale-forest-leaf{width:6px;height:3px;background:#18232bc4;border-radius:90% 0 90% 0;animation-name:forest-leaf-flight!important;}
+@keyframes hearth-flicker{0%,100%{opacity:.5}18%{opacity:.8}42%{opacity:.57}61%{opacity:.95}83%{opacity:.65}}
+@keyframes fire-tip{0%{transform:scale(.82,.85);opacity:.55}45%{transform:scale(1.05,1.12);opacity:.9}100%{transform:scale(.9,1);opacity:.7}}
+@keyframes door-daylight{from{opacity:.4;transform:translateX(-.5%)}to{opacity:.8;transform:translateX(.5%)}}
+@keyframes cottage-lantern{0%,100%{opacity:.5}26%{opacity:.85}45%{opacity:.63}70%{opacity:.95}}
+@keyframes moon-clouds{from{opacity:.35}to{opacity:.82}}
+@keyframes forest-fog-flow{from{transform:translateX(-5%)}to{transform:translateX(7%)}}
+@keyframes scene-dust{0%{opacity:0;transform:translate(0,12px)}25%,65%{opacity:.38}100%{opacity:0;transform:translate(-20px,-65px)}}
+@keyframes forest-leaf-flight{0%{opacity:0;transform:translate(-25px,-12px) rotate(-25deg)}20%,70%{opacity:.65}100%{opacity:0;transform:translate(100px,75px) rotate(150deg)}}
+@media(max-width:760px){.tale-scene-air i:nth-child(n+8){display:none;}}
+@media(prefers-reduced-motion:reduce){.tale-environment-plane *{animation:none!important;}.tale-scene-air{display:none;}}
+
+/* Keep the illustration stable; only the separate flowers and title move. */
+.tale-environment-plane *{animation:none!important;}.tale-forest-leaf,.tale-window-dust{display:none;}.tale-photo-shift .tale-photo{transform:scale(1.055);animation:none!important;}.tale-figure{transform:none;}
+.tale-giant-title{transform-style:preserve-3d;text-shadow:0 1px 0 #8e8b8577,0 2px 0 #65656a66,0 3px 0 #44495177,0 5px 8px #080e1866,0 15px 26px #050b1370;animation:tale-type-hover 6.3s ease-in-out infinite;animation-play-state:paused;will-change:translate;}
+.story-journey.is-in-view:not(.is-document-hidden) .tale-scene.is-active .tale-giant-title{animation-play-state:running;}
+@keyframes tale-type-hover{0%,100%{translate:0 4px}50%{translate:0 -8px}}
+@media(max-width:760px){.tale-giant-title{text-shadow:0 1px 0 #8e8b8566,0 2px 0 #4a505b88,0 5px 8px #080e1877,0 12px 20px #050b1370;}}
+@media(prefers-reduced-motion:reduce){.tale-giant-title{animation:none;will-change:auto;}}

@@ -1,0 +1,72 @@
+.story-lesson{height:180svh}.lesson-stage{min-height:0}.lesson-content{inset:0;display:flex;align-items:center;justify-content:center}.lesson-content>header{position:relative;inset:auto;width:100%;padding:50px 5%}.lesson-content h2{font-size:clamp(70px,10vw,150px)}.lesson-content .lesson-points{display:none!important}.lesson-ink-wash{clip-path:none!important;opacity:0;background:#030609}
+.ending-faq,.redhood-ending-footer{position:relative;background:#030609;color:#eeede9;font-family:SUIT,Arial,sans-serif}
+.ending-faq{padding:90px 4.5% 120px;min-height:75svh}
+.faq-spaced-title{display:flex;align-items:center;justify-content:space-between;font:700 13px SUIT,Arial,sans-serif;margin-bottom:65px}
+.faq-layout{display:grid;grid-template-columns:32% 68%}.faq-aside{font-size:11px;line-height:1.7;color:#c2c3c1;padding-top:10px}
+.faq-list{min-width:0}.faq-item h3{margin:0;font-family:inherit}.faq-item button{display:flex;align-items:flex-start;justify-content:space-between;gap:25px;width:100%;background:none;border:0;border-radius:0;text-align:left;font:500 clamp(18px,2.2vw,32px)/1.45 SUIT,Arial,sans-serif;letter-spacing:-.055em;color:#6e7476;padding:15px 0;transition:color .3s;cursor:pointer}
+.faq-item button>span{flex:none;font:400 21px/1.7 Arial,sans-serif;color:#d9dddb}.faq-item button:hover,.faq-item.is-open button{color:#eeede9}.faq-item button:focus-visible{outline:1px solid #e5e3d6;outline-offset:5px}
+.faq-answer{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .65s cubic-bezier(.2,.75,.2,1),opacity .45s}.faq-answer>div{overflow:hidden;min-height:0}
+.faq-item.is-open .faq-answer{grid-template-rows:1fr;opacity:1;border-top:1px solid #818786}
+.faq-answer p{width:52%;margin:18px 0 44px auto;font:12px/1.8 SUIT,Arial,sans-serif;color:#c3cacb;word-break:keep-all}
+.redhood-ending-footer{min-height:90svh;padding:100px 4.5% 20px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.ending-footer-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:clamp(80px,12vw,180px)}
+.ending-footer-top h2{font:500 clamp(40px,5.8vw,88px)/1.02 SUIT,Arial,sans-serif;letter-spacing:-.06em;color:#f1f0eb;margin-bottom:25px}
+.ending-footer-actions{display:flex;gap:10px;flex-wrap:wrap}.ending-footer-actions a{display:inline-flex;align-items:center;gap:24px;padding:13px 18px;border:1px solid #777f7f;border-radius:999px;font-size:9px;letter-spacing:.06em;transition:background .25s,color .25s,scale .25s}.ending-footer-actions a:hover{background:#eeede9;color:#030609;scale:1.025}.ending-footer-actions a:active{scale:.97}
+.ending-footer-note{font:12px/1.65 SUIT,Arial,sans-serif;color:#b6bec0;margin:0}
+.ending-letter-word{display:flex;align-items:center;justify-content:space-between;width:100%;height:clamp(120px,20vw,310px);font:900 10vw/.85 "Arial Black",Arial,sans-serif;color:#f2f2ec;user-select:none;cursor:default}
+.ending-letter{display:inline-block;flex:none;transform-origin:center 62%;transition:transform .75s cubic-bezier(.2,.75,.2,1);padding:22px 0}
+.ending-letter>span{display:block;transform:scaleY(1.55)}.ending-letter:hover{transform:translateY(9px) scale(.64);transition-duration:.4s}
+.ending-footer-bottom{display:flex;justify-content:space-between;gap:20px;margin-top:30px;font:7px/1.5 SUIT,Arial,sans-serif;color:#a3abad;letter-spacing:.08em}
+@media(max-width:700px){.story-lesson{height:165svh}.lesson-content h2{font-size:17vw}.ending-faq{padding:70px 5% 70px;min-height:70svh}.faq-spaced-title{margin-bottom:40px;font-size:12px}.faq-layout{grid-template-columns:1fr;gap:27px}.faq-aside{font-size:10px}.faq-item button{font-size:18px;padding:18px 0;gap:16px}.faq-answer p{width:85%;font-size:11px;margin-bottom:30px}.redhood-ending-footer{min-height:70svh;padding:80px 5% 20px}.ending-footer-top{align-items:flex-start;flex-direction:column;margin-bottom:65px;gap:40px}.ending-footer-top h2{font-size:10vw}.ending-footer-note{font-size:10px}.ending-letter-word{height:23vw;min-height:95px}.ending-letter{padding:14px 0}.ending-footer-bottom{font-size:6px;margin-top:22px}.ending-footer-bottom>span:last-child{max-width:55%;text-align:right}}
+@media(prefers-reduced-motion:reduce){.faq-answer,.ending-letter{transition:none}.ending-letter:hover{transform:scale(.8)}}
+/* Keep each hover target fixed so shrinking letters never flicker at their edges. */
+.ending-letter{transform:none!important;transition:none}
+.ending-letter>span{transform:scaleY(1.55);transition:transform .75s cubic-bezier(.2,.75,.2,1);transform-origin:center 62%}
+.ending-letter:hover>span{transform:translateY(9px) scale(.64) scaleY(1.55);transition-duration:.4s}
+@media(prefers-reduced-motion:reduce){.ending-letter>span{transition:none}.ending-letter:hover>span{transform:scale(.8) scaleY(1.55)}}
+/* FAQ and wordmark share one grid and one continuous closing surface. */
+.ending-faq{padding:90px 4.5% 35px;min-height:0}
+.faq-spaced-title{margin-bottom:46px}
+.faq-layout{grid-template-columns:32% 68%;align-items:start}
+.faq-aside{padding-top:15px}
+.faq-item{position:relative}
+.faq-item button{font-size:clamp(16px,1.65vw,24px);padding:18px 0;letter-spacing:-.045em;align-items:center;line-height:1.5}
+.faq-item button>span{font-size:18px;line-height:1.5}
+.faq-answer{position:relative;border:0!important;transition:grid-template-rows 1.2s cubic-bezier(.22,.7,.2,1),opacity 1s ease;opacity:0}
+.faq-answer:before{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:#eeede9;transform:scaleX(0);transform-origin:left;transition:transform 1.15s cubic-bezier(.22,.7,.2,1);z-index:1}
+.faq-item.is-open .faq-answer:before{transform:scaleX(1)}
+.faq-answer p{width:50%;padding-left:14px;margin:24px 0 35px auto;font-size:12px;line-height:1.95;opacity:0;transform:translateY(10px);transition:opacity .55s ease,transform .65s ease}
+.faq-item.is-open .faq-answer p{opacity:1;transform:translateY(0);transition:opacity 1.05s .3s ease,transform 1.15s .25s cubic-bezier(.22,.7,.2,1)}
+.redhood-ending-footer{min-height:0;padding:28px 4.5% 20px;display:block}
+.ending-footer-top{display:none}
+.ending-letter-word{height:clamp(130px,22vw,320px)}
+.ending-letter>span{transform:scaleY(1.55);transition:transform .95s cubic-bezier(.16,1,.3,1);transform-origin:center 65%}
+.ending-letter:hover>span{transform:translateY(16px) scale(.25) scaleY(1.55);transition:transform .22s cubic-bezier(.3,.05,.5,1)}
+.ending-footer-bottom{margin-top:18px}
+@media(max-width:700px){.ending-faq{padding:65px 5% 20px}.faq-spaced-title{margin-bottom:32px}.faq-layout{grid-template-columns:1fr;gap:20px}.faq-aside{padding-top:0}.faq-item button{font-size:15px;padding:17px 0;gap:16px}.faq-answer p{width:85%;font-size:11px;padding-left:0;margin:20px 0 29px auto}.redhood-ending-footer{padding:15px 5% 18px}.ending-letter-word{height:26vw;min-height:100px}.ending-letter:hover>span{transform:translateY(7px) scale(.25) scaleY(1.55)}}
+@media(prefers-reduced-motion:reduce){.faq-answer,.faq-answer:before,.faq-answer p,.faq-item.is-open .faq-answer p,.ending-letter>span,.ending-letter:hover>span{transition:none}}
+/* Remove inherited footer spacing and use one fixed forest surface at the handoff. */
+.redhood-ending-footer{margin:0!important;border:0!important}
+.fairytale-history,.story-lesson,.fairytale-history .history-stage,.story-lesson .lesson-stage{background:linear-gradient(135deg,#33383f55,#44494d99 60%,#252b32bb),linear-gradient(#0d1722d0,#0d1722df),url('images/interactive/forest-stage.webp') center/cover fixed!important;border:0!important}
+.fairytale-history .history-stage:before{display:none!important}
+.fairytale-history .unravel-stage:after{box-shadow:none!important}
+@media(prefers-reduced-motion:reduce){.fairytale-history,.story-lesson,.fairytale-history .history-stage,.story-lesson .lesson-stage{background-attachment:scroll!important}}
+.fairytale-history,.story-lesson,.fairytale-history .history-stage,.story-lesson .lesson-stage{background-attachment:fixed,fixed,fixed!important;background-size:cover,cover,cover!important;background-position:center,center,center!important}
+.ending-interactive-surface{position:relative;isolation:isolate;background:#030609;overflow:hidden}
+.ending-faq,.redhood-ending-footer{z-index:2;background:transparent!important}
+.ending-cursor-ink{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.faq-spaced-title{display:none}
+.ending-letter>span,.ending-letter:hover>span{transform:scaleY(1.55);transition:none}
+.ending-faq{padding-top:110px}
+@media(max-width:700px){.ending-faq{padding-top:70px}}
+.ending-passive-cursor{position:fixed;left:0;top:0;width:27px;height:27px;border:1px solid #f2f2ec60;border-radius:50%;background:#f2f2ec16;pointer-events:none;z-index:1000;opacity:0;transition:opacity .18s ease;will-change:transform}
+.ending-passive-cursor.is-visible{opacity:1}
+.ending-interactive-surface.passive-cursor-area{cursor:none}
+.ending-interactive-surface a,.ending-interactive-surface button{cursor:pointer}
+.ending-interactive-surface .ending-letter{cursor:default}
+@media(pointer:coarse){.ending-passive-cursor{display:none}.ending-interactive-surface.passive-cursor-area{cursor:auto}}
+/* A quiet top navigation with one translucent divider. */
+.navigation{border-bottom:1px solid #e8e2d626}
+.navigation .back,.navigation .wordmark,.navigation .menu-toggle{border:0;border-radius:0;background:transparent;backdrop-filter:none;box-shadow:none;scale:1;padding:10px 0}
+.navigation .back:hover,.navigation .wordmark:hover,.navigation .menu-toggle:hover,.navigation .menu-toggle[aria-expanded=true]{background:transparent;border-color:transparent;box-shadow:none;scale:1;color:#fff}
+.navigation .back:active,.navigation .wordmark:active,.navigation .menu-toggle:active{background:transparent;scale:1;opacity:.65}
