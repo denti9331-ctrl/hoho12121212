@@ -1,0 +1,9 @@
+.tale-hover-trails{position:absolute;inset:0;width:100%;height:100%;z-index:6;pointer-events:none}
+.library[data-tale="2"] .tale-hover-trails{z-index:3}
+.library.opening .tale-hover-trails{opacity:0;transition:opacity .2s}
+.tale-mouse-dot{position:absolute;left:0;top:0;width:14px;height:14px;border:1px solid #eeeae3a6;border-radius:50%;background:#eeeae336;z-index:100;pointer-events:none;opacity:0;transition:opacity .15s;box-sizing:border-box}
+.library[data-tale="3"] .tale-mouse-dot{border-color:#29272c88;background:#29272c24}
+.has-tale-pointer .tale-mouse-dot{opacity:1}
+@media(hover:hover) and (pointer:fine){.library .has-tale-pointer,.library .has-tale-pointer *{cursor:none!important}}
+@media(prefers-reduced-motion:reduce),(pointer:coarse){.tale-hover-trails,.tale-mouse-dot{display:none}.library .has-tale-pointer,.library .has-tale-pointer *{cursor:auto!important}}
+.snowwhite-wet-paper{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}.library.opening .snowwhite-wet-paper{opacity:0}@media(prefers-reduced-motion:reduce),(pointer:coarse){.snowwhite-wet-paper{display:none!important}}

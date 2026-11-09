@@ -1,0 +1,7 @@
+(()=>{
+const title=document.querySelector('#tale-title');if(!title)return;const reduced=matchMedia('(prefers-reduced-motion:reduce)');let frame=0,start=0;
+function draw(now){const p=Math.min(1,(now-start)/1400),ease=1-Math.pow(1-p,2.2);if(p>=1){title.style.clipPath='inset(-18px)';frame=0;return}const edge=ease*1.5-.2,points=['-10% -20%'];for(let j=0;j<=36;j++){const y=-.2+j/36*1.4,wave=(Math.sin(y*13+ease*3)*.07+Math.cos(y*27-ease*2)*.035)*Math.sin(p*Math.PI);points.push(`${(edge+wave)*100}% ${y*100}%`)}points.push('-10% 120%');title.style.clipPath=`polygon(${points.join(',')})`;frame=requestAnimationFrame(draw)}
+function reveal(force=false){if(!force&&title.firstElementChild?.classList.contains('collection-title-float'))return;const text=title.textContent;title.dataset.shadowTitle=text;title.setAttribute('aria-label',text);const span=document.createElement('span');span.className='collection-title-float';span.textContent=text;title.replaceChildren(span);cancelAnimationFrame(frame);if(reduced.matches){title.style.clipPath='none';return}start=performance.now();frame=requestAnimationFrame(draw)}
+new MutationObserver(()=>reveal()).observe(title,{childList:true,characterData:true,subtree:true});new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting))reveal(true)},{threshold:.2}).observe(document.querySelector('.library-stage'));reveal();addEventListener('pagehide',()=>cancelAnimationFrame(frame));
+})();
+

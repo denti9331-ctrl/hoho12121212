@@ -1,0 +1,95 @@
+/* Four clearly separated story palettes, while keeping the existing artwork. */
+.library{--scene-base:#29243f;--scene-light:#adacca;background:var(--scene-base)}
+.library[data-tale="0"]{--scene-base:#29243f;--scene-light:#bdb1e3}
+.library[data-tale="1"]{--scene-base:#363c43;--scene-light:#c3c8cb}
+.library[data-tale="2"]{--scene-base:#103b45;--scene-light:#93ccd3}
+.library[data-tale="3"]{--scene-base:#eeede8;--scene-light:#fffefa}
+.library-stage{background:var(--scene-base);transition:background-color 1s ease}
+.world{filter:none;transition:opacity .9s ease,transform 3s ease;background-color:var(--scene-base)}
+.world-0{background-image:url('assets/world-cinderella-scene-v9.webp')}
+.world-1{background-image:url('assets/world-redhood-scene-v9.webp')}
+.world-2{background-image:url('assets/world-mermaid-scene-v9.webp')}
+.world-3{background-image:url('assets/world-snowwhite-scene-v9.webp')}
+.library .library-shade,.library[data-tale="1"] .library-shade,.library[data-tale="3"] .library-shade{background:linear-gradient(90deg,#090e1866,transparent 65%),linear-gradient(0deg,#090e18c9,transparent 48%),linear-gradient(#0d10151a,#0d10151a)}
+.library .book-tabs{gap:8px;justify-content:center}
+.library .book-tabs button,.library .enter-button,.library .back-library,.library .download-model,.library .brand,.main-navigation a,.main-navigation button{border:1px solid #e5ddd273;border-radius:15px;background:#10192066;color:#e8e2d6;padding:11px 16px;min-height:40px;display:inline-flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s,scale .25s,box-shadow .3s;backdrop-filter:blur(6px)}
+.library .book-tabs button{min-width:40px;padding:10px;font:10px SUIT,sans-serif;letter-spacing:.1em}
+.library .book-tabs button:hover,.library .enter-button:hover,.library .back-library:hover,.library .download-model:hover,.library .brand:hover,.main-navigation a:hover,.main-navigation button:hover{background:#eee4d52b;border-color:#e8e1d2;scale:1.05;box-shadow:0 6px 28px #0004}
+.library .book-tabs button[aria-pressed=true]{border-color:#e8e1d2;background:#eee4d52b;color:#fff}
+.library .book-tabs button:active,.library .enter-button:active,.main-navigation a:active,.main-navigation button:active{scale:.96;background:#eee4d548}
+.library .tale-scrollbar{width:27px;border:1px solid #e5ddd240;border-radius:15px;background:#10192044;transition:background .3s,border-color .3s}
+.library .tale-scrollbar:hover{border-color:#e8e1d2;background:#eee4d51a}.library .tale-scrollbar:before{left:12px}.library .rail-thumb{left:10px;background:#e8e2d6;box-shadow:none}
+.library .library-controls{height:190px;gap:12px}
+.library .book-cursor{width:27px;height:27px;border:1px solid #f2f2ec60;background:#f2f2ec16;backdrop-filter:none;box-shadow:none;transition:width .35s,height .35s,background .35s,opacity .2s,transform .3s}
+.library:not([data-hovered-book="-1"]) .book-cursor{width:42px;height:42px;background:#f2f2ec25;border-color:#f2f2ecb3}
+.collection-title-float{display:inline-block;animation:collection-text-float 6.8s ease-in-out infinite;will-change:transform}
+.library .library-intro h1,.library .library-intro .eyebrow,.library .selection>.eyebrow,.library .edition{animation:collection-text-float 7.5s ease-in-out infinite}
+.library .library-intro .eyebrow{animation-delay:-1.8s}.library .selection>.eyebrow{animation-delay:-3s}
+.library:not(.opening) .book-slot .book{animation:collection-book-float 7s ease-in-out infinite}
+@keyframes collection-text-float{0%,100%{transform:translateY(-4px)}50%{transform:translateY(4px)}}
+@keyframes collection-book-float{0%,100%{transform:translateY(-8px) rotateY(-12deg) rotateZ(2deg)}50%{transform:translateY(8px) rotateY(-12deg) rotateZ(4deg)}}
+@media(hover:hover){.library:not(.opening) .book-slot:hover .book{scale:1.18}}
+@media(max-width:700px){.library .library-controls{height:168px;gap:9px}.library .book-tabs{gap:6px}.library .book-tabs button{min-width:34px;min-height:34px;padding:8px;border-radius:12px}.library .rail-thumb{top:calc(10px + var(--rail-progress,0)*116px);height:30px}.main-navigation a,.main-navigation button{min-height:34px;padding:8px 10px;border-radius:12px;font-size:8px}.library .brand{padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){.collection-title-float,.library .library-intro h1,.library .library-intro .eyebrow,.library .selection>.eyebrow,.library .edition,.library:not(.opening) .book-slot .book{animation:none;will-change:auto}.world,.library-stage{transition:none}}
+/* Main navigation starts at the fourth journey scene, then stays for the archive. */
+.main-navigation{opacity:0;visibility:hidden;pointer-events:none;border-bottom:1px solid #e8e2d626;transition:opacity .4s ease,visibility .4s ease}
+.main-nav-visible .main-navigation{opacity:1;visibility:visible;pointer-events:auto}
+.main-navigation a,.main-navigation button,.main-navigation a:hover,.main-navigation button:hover{border:0;border-radius:0;background:transparent;backdrop-filter:none;box-shadow:none;scale:1;padding:9px 0;text-decoration:none}
+.library .book-tabs button,.library .book-tabs button:hover,.library .book-tabs button[aria-pressed=true]{border:0;border-radius:0;background:transparent;backdrop-filter:none;box-shadow:none;scale:1;color:#aab2b6;position:relative}
+.library .book-tabs button:hover,.library .book-tabs button[aria-pressed=true]{color:#fff}
+.library .book-tabs button:after{content:'';position:absolute;left:9px;right:9px;bottom:4px;height:1px;background:#e8e2d6;transform:scaleX(0);transition:transform .3s ease}
+.library .book-tabs button:hover:after,.library .book-tabs button[aria-pressed=true]:after{transform:scaleX(1)}
+.library .tale-scrollbar,.library .tale-scrollbar:hover{border:0;border-radius:0;background:transparent}
+.library .book-cursor{display:none!important}
+.library #book-webgl canvas{cursor:pointer}.library[data-hovered-book="-1"] #book-webgl canvas{cursor:default}
+.library .brand,.library .brand:hover{border:0;border-radius:0;background:none;backdrop-filter:none;box-shadow:none;scale:1}
+@media(prefers-reduced-motion:reduce){.main-navigation{transition:none}}
+.collection-fluid-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+.collection-fluid-ready[data-tale="1"] #tale-title{color:#f2eee5;text-shadow:none}
+.collection-fluid-ready[data-tale="1"] #tale-title:after{display:none}
+.collection-fluid-ready[data-tale="1"] .collection-title-float{opacity:1}
+.library.opening .collection-fluid-canvas,.library.reading .collection-fluid-canvas{opacity:0;transition:opacity .3s}
+@media(pointer:coarse){.collection-fluid-canvas{display:none}.collection-fluid-ready[data-tale="1"] #tale-title{color:#eee9d9!important}.collection-fluid-ready[data-tale="1"] .collection-title-float{opacity:1}}
+/* Snow White: pale ivory forest, dark typography and original black petals. */
+.library .world-3{background-image:url('assets/world-snowwhite-scene-v9.webp')}
+.library[data-tale="3"]{--cream:#29272c;color:#29272c}
+.library[data-tale="3"] .library-shade{background:linear-gradient(0deg,#eeede86b,transparent 45%)}
+.library[data-tale="3"] :is(.brand,.edition,.library-intro,.library-intro>p:last-child,.eyebrow,.selection h2,.selection>p:not(.eyebrow),.library-bottom){color:#343139;text-shadow:none}
+.library[data-tale="3"] .selection h2:after{display:none}
+.library[data-tale="3"] .book-tabs button{color:#777179}
+.library[data-tale="3"] .book-tabs button:hover,.library[data-tale="3"] .book-tabs button[aria-pressed=true]{color:#211f24}
+.library[data-tale="3"] .book-tabs button:after,.library[data-tale="3"] .rail-thumb{background:#343139}
+
+.library[data-tale='0'] .library-shade,.library[data-tale='2'] .library-shade{background:linear-gradient(0deg,#11141b70,transparent 35%),linear-gradient(90deg,#11141b1a,transparent 60%)}
+
+.library[data-tale='1'] .library-shade{background:linear-gradient(0deg,#11141b70,transparent 35%),linear-gradient(90deg,#11141b1a,transparent 60%)}
+
+/* Alternate the composition: Snow White left, magic mirror right. */
+.library .world-3{scale:-1 1}
+/* Tale-specific typography and controls, tuned to each illustrated setting. */
+.library[data-tale="0"]{--tale-title:#e3d5ff;--tale-copy:#e0dbe9;--tale-accent:#c7aff2;--tale-muted:#b4a9c8;--tale-glass:#29203388;--tale-line:#c7aff259}
+.library[data-tale="1"]{--tale-title:#8e3039;--tale-copy:#e4d6ce;--tale-accent:#943c45;--tale-muted:#aa7e82;--tale-glass:#34202688;--tale-line:#943c4559}
+.library[data-tale="2"]{--tale-title:#d5dfdf;--tale-copy:#d2d9da;--tale-accent:#b0bec2;--tale-muted:#a4b1b5;--tale-glass:#202c3288;--tale-line:#b0bec259}
+.library[data-tale="3"]{--tale-title:#171719;--tale-copy:#343436;--tale-accent:#29292c;--tale-muted:#646467;--tale-glass:#fffaf0aa;--tale-line:#29292c59}
+.library[data-tale] #tale-title{color:var(--tale-title)!important;text-shadow:0 3px 22px #10101966;transition:color .7s ease}
+.library[data-tale="3"] #tale-title{text-shadow:none}
+.library[data-tale] :is(.library-intro h1,.library-intro>p:last-child,#tale-description){color:var(--tale-copy);transition:color .7s ease}
+.library[data-tale] :is(.brand,.edition,.eyebrow,.library-bottom){color:var(--tale-accent);transition:color .7s ease}
+.library[data-tale] .book-tabs button{color:var(--tale-muted)}
+.library[data-tale] .book-tabs button:hover,.library[data-tale] .book-tabs button[aria-pressed=true]{color:var(--tale-title)}
+.library[data-tale] .book-tabs button:after,.library[data-tale] .rail-thumb{background:var(--tale-accent)}
+.library[data-tale] .tale-scrollbar:before{background:var(--tale-line)}
+.library[data-tale] :is(.enter-button,.back-library,.download-model){color:var(--tale-copy);background:var(--tale-glass);border-color:var(--tale-line)}
+.library[data-tale] :is(.enter-button,.back-library,.download-model):hover{color:var(--tale-title);border-color:var(--tale-accent)}
+.library[data-tale] :is(button,a,[role="slider"]):focus-visible{outline:2px solid var(--tale-accent);outline-offset:5px}
+
+.library #tale-number{display:none}
+/* Each title belongs to its setting: moonbeams, dark mist, waterlight, ivory haze. */
+.library[data-tale] .selection{isolation:isolate}
+.library[data-tale] .selection:before{content:'';position:absolute;z-index:-1;pointer-events:none;left:50%;bottom:-45px;width:min(110vw,1600px);height:clamp(170px,22vw,330px);transform:translateX(-50%)}
+.library[data-tale="1"] .selection:before{background:radial-gradient(ellipse at 35% 65%,#14151c80,transparent 65%),radial-gradient(ellipse at 68% 75%,#231b276b,transparent 68%);filter:blur(20px)}
+.library[data-tale="1"] #tale-title{text-shadow:0 0 2px #d8958966,0 3px 16px #0c0b1266}
+.library[data-tale="3"] .selection:before{background:radial-gradient(ellipse at 50% 63%,#f0efead9 0%,#e8e8e4a6 34%,#e6e7e15c 55%,transparent 74%);filter:blur(18px)}
+.library[data-tale="0"] .selection:before{background:linear-gradient(118deg,transparent 19%,#d3c5ed0a 20%,#e8dfff40 24%,transparent 28%,transparent 40%,#d4c4f02e 44%,transparent 49%,transparent 61%,#f4eaff29 64%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 60%,#000 15%,transparent 73%);filter:blur(3px);height:clamp(220px,28vw,420px)}
+.library[data-tale="2"] .selection:before{background:repeating-radial-gradient(ellipse at 32% -65%,transparent 0 29px,#c0e1e31f 32px,#e5f0ef38 35px,transparent 40px 66px);mask-image:radial-gradient(ellipse at 50% 64%,#000 12%,transparent 71%);filter:blur(2px);transform:translateX(-50%) rotate(-4deg)}
+@media(max-width:700px){.library[data-tale] .selection:before{width:130vw;bottom:-30px;height:180px}.library[data-tale="1"] .selection:before,.library[data-tale="3"] .selection:before{filter:blur(12px)}}

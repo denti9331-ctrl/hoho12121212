@@ -1,0 +1,65 @@
+.tale-effects{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:35}
+.book-slot .book{transition:scale .3s ease}
+@media(hover:hover){body:not(.opening) .book-slot:hover .book{scale:1.07}}
+@media(prefers-reduced-motion:reduce){.book-slot .book{transition:none}.tale-effects{display:none}}
+
+.library-red-petals{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;pointer-events:none;opacity:0;transition:opacity .7s ease;}.library-red-petals.is-active{opacity:1;}@media(max-width:760px){.library-red-petals.is-active{opacity:1;}}@media(prefers-reduced-motion:reduce){.library-red-petals{display:none;transition:none;}}
+
+.library-mermaid-bubbles{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .45s ease;}.library-mermaid-bubbles.is-active{opacity:1;}.library-mermaid-bubbles video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;}.library-mermaid-bubbles .bubble-loop{opacity:0;}.library-mermaid-bubbles[data-phase="loop"] .bubble-loop{opacity:1;}.library-mermaid-bubbles[data-phase="loop"] .bubble-intro{opacity:0;}@media(prefers-reduced-motion:reduce){.library-mermaid-bubbles{display:none;transition:none;}}
+/* Red Riding Hood: darkness behind a burst of petals toward the camera. */
+.redhood-entry-curtain{position:fixed;inset:0;z-index:34;background:#020103;opacity:0;pointer-events:none;transition:opacity .25s ease}
+body.opening[data-tale="1"] .redhood-entry-curtain{opacity:1;transition:opacity 1s ease-in}
+body.opening[data-tale="1"] .tale-effects{z-index:36}
+@media(prefers-reduced-motion:reduce){.redhood-entry-curtain{transition:none!important}}
+
+.library-cinderella-flower{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;pointer-events:none;opacity:0;transition:opacity .7s ease}.library-cinderella-flower.is-active{opacity:1}@media(prefers-reduced-motion:reduce){.library-cinderella-flower{display:none}}
+
+.library-snowwhite-petals{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;pointer-events:none;opacity:0;transition:opacity .7s ease}.library-snowwhite-petals.is-active{opacity:1}@media(prefers-reduced-motion:reduce){.library-snowwhite-petals{display:none}}
+/* Forest shadows replace Redhood's opening petals. */
+.redhood-entry-curtain{overflow:hidden;background:transparent;z-index:40;transition:none}
+body.opening[data-tale="1"] .redhood-entry-curtain{opacity:1;transition:none}
+.redhood-shadow-black{position:absolute;inset:0;background:#050507;opacity:0}
+.redhood-entry-progress{position:absolute;left:50%;top:50%;bottom:auto;width:min(220px,40vw);height:1px;transform:translate(-50%,-50%);background:#7d30352e;opacity:0}
+.redhood-entry-progress span{display:block;width:100%;height:100%;background:#a3464e;transform:scaleX(0);transform-origin:left}
+body.opening[data-tale="1"] .redhood-shadow-black{animation:redhood-shadow-cover .4s 1.15s ease both}
+body.opening[data-tale="1"] .redhood-entry-progress{animation:redhood-shadow-cover .35s .55s ease both}
+body.opening[data-tale="1"] .redhood-entry-progress span{animation:redhood-entry-fill 1.15s .6s cubic-bezier(.2,.55,.4,1) both}
+body.opening[data-tale="1"] .entry-wash{opacity:0;transition:none}
+@keyframes redhood-shadow-cover{from{opacity:0}to{opacity:1}}
+@keyframes redhood-entry-fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){body.opening[data-tale="1"] .redhood-entry-curtain *{animation:none!important}.redhood-shadow-black{opacity:1}}
+/* Fine branch silhouettes sweep through the existing shadow transition. */
+.redhood-entry-progress{background:#9c424626;height:1px}
+.redhood-entry-progress span{position:relative;background:linear-gradient(90deg,#67242f,#a34b51 75%,#d68f86);box-shadow:0 0 8px #a3464e33}
+.redhood-entry-progress span:after{content:'';position:absolute;right:0;top:-1px;width:3px;height:3px;border-radius:50%;background:#efb6a8;box-shadow:0 0 8px #d78a7caa}
+/* One continuous, softly feathered shadow; no separately moving strips. */
+.redhood-shadow-sweep{position:absolute;left:0;top:-15%;height:130%;width:150%;background:linear-gradient(90deg,transparent 0%,#04050835 5%,#040508bc 12%,#050507f5 21%,#050507 31%);filter:blur(28px);transform:translateX(90%);will-change:transform}
+body.opening[data-tale="1"] .redhood-shadow-sweep{animation:redhood-shadow-arrive 1.55s cubic-bezier(.45,0,.2,1) both}
+@keyframes redhood-shadow-arrive{0%{transform:translateX(90%)}100%{transform:translateX(-24%)}}
+/* Mermaid: refracted water rises into darkness, then a blue loading line. */
+.mermaid-entry-curtain{position:fixed;inset:0;z-index:42;pointer-events:none;opacity:0}
+body.opening[data-tale="2"] .mermaid-entry-curtain{opacity:1}
+.mermaid-entry-black{position:absolute;inset:0;background:#020406;opacity:0}
+.mermaid-entry-progress{position:absolute;left:50%;top:50%;width:min(220px,40vw);height:1px;transform:translate(-50%,-50%);background:#5c9bb52b;opacity:0}
+.mermaid-entry-progress span{position:relative;display:block;height:100%;background:linear-gradient(90deg,#235d85,#6fb8d5 80%,#b8e7ef);transform:scaleX(0);transform-origin:left;box-shadow:0 0 10px #56a6d266}
+.mermaid-entry-progress span:after{content:'';position:absolute;right:0;top:-1px;width:3px;height:3px;border-radius:50%;background:#c4f0ff;box-shadow:0 0 9px #80c9f0}
+body.opening[data-tale="2"] .mermaid-entry-black{animation:redhood-shadow-cover 1.65s .15s cubic-bezier(.3,.05,.4,1) both}
+body.opening[data-tale="2"] .mermaid-entry-progress{animation:redhood-shadow-cover .4s 1.05s ease both}
+body.opening[data-tale="2"] .mermaid-entry-progress span{animation:redhood-entry-fill 1.05s 1.1s cubic-bezier(.2,.55,.4,1) both}
+body.opening[data-tale="2"] :is(.worlds,#book-webgl){filter:url('#mermaid-entry-refraction')}
+body.opening[data-tale="2"] .tale-effects{z-index:41}
+body.opening[data-tale="2"] .entry-wash{opacity:0;transition:none}
+@media(prefers-reduced-motion:reduce){body.opening[data-tale="2"] :is(.worlds,#book-webgl){filter:none}body.opening[data-tale="2"] .mermaid-entry-curtain *{animation:none!important}}
+/* Cinderella's extinguishing magic and Snow White's spreading ink. */
+.tale-entry-finish{position:fixed;inset:0;z-index:43;pointer-events:none;opacity:0}
+.tale-entry-finish.is-active{opacity:1}
+.tale-entry-finish canvas{position:absolute;inset:0;width:100%;height:100%;display:none}
+.tale-entry-finish[data-kind="0"] .cinderella-entry-dust,.tale-entry-finish[data-kind="3"] .snowwhite-entry-ink{display:block}
+.tale-entry-finish-line{position:absolute;left:50%;top:50%;width:min(220px,40vw);height:1px;transform:translate(-50%,-50%);background:#c3afd52b;opacity:0}
+.tale-entry-finish-line span{display:block;position:relative;height:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,#66567f,#c2afe2 80%,#e9dcff);box-shadow:0 0 9px #b59fd344}
+.tale-entry-finish[data-kind="3"] .tale-entry-finish-line{background:#ede4cf26}
+.tale-entry-finish[data-kind="3"] .tale-entry-finish-line span{background:linear-gradient(90deg,#8b8475,#d8d0bc 80%,#f3ecd9);box-shadow:0 0 7px #e7ddbf22}
+.tale-entry-finish.is-active .tale-entry-finish-line{animation:redhood-shadow-cover .35s .95s ease both}
+.tale-entry-finish.is-active .tale-entry-finish-line span{animation:redhood-entry-fill 1.1s 1s cubic-bezier(.2,.55,.4,1) both}
+body.opening[data-tale="0"] .entry-wash,body.opening[data-tale="3"] .entry-wash{opacity:0;transition:none}
+@media(prefers-reduced-motion:reduce){.tale-entry-finish{display:none}}
