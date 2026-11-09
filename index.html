@@ -1,0 +1,32 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DARK FAIRY TALE — A Collection of Tales</title><link rel="stylesheet" href="main-intro.css"><link rel="stylesheet" href="main-nav.css"><script defer src="main-nav.js?v=20261108-stage4"></script><style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#111;color:#eee3d3}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.book-scene{height:100svh;min-height:600px;transform:none;isolation:isolate;overflow:hidden}.book-library-frame{display:block;border:0;width:100%;height:100%;background:#111}.intro-about{background:#151916;color:#eee3d3;border:1px solid #b5a685;padding:35px;max-width:500px}.intro-about::backdrop{background:#0009}.intro-about button{background:none;border:1px solid #b5a685;color:inherit;padding:10px 20px}
+</style><link rel="stylesheet" href="forest-entry/forest-entry.css"><script defer src="forest-entry/forest-entry.js"></script><link rel="stylesheet" href="book-library/typography.css"><link rel="stylesheet" href="forest-entry/hero-type.css"><script defer src="forest-entry/hero-type.js"></script><link rel="stylesheet" href="forest-entry/butterfly-intro.css"><script defer src="forest-entry/butterfly-intro.js"></script><link rel="stylesheet" href="book-library/collection-polish.css?v=20261110-title-atmosphere2"></head><body class="library-page has-intro">  <nav class="main-navigation" aria-label="Main navigation">
+    <a class="main-navigation__brand" href="#main-intro">DARK FAIRY TALE</a>
+    <div class="main-navigation__links">
+      <a href="#main-intro">HOME</a>
+      <a href="#book-scene">ARCHIVE</a>
+      <button type="button" data-about aria-haspopup="dialog" aria-controls="main-about">ABOUT</button>
+    </div>
+  </nav>
+  <section id="main-intro" class="main-intro" aria-labelledby="main-intro-title">
+    
+    
+    <div class="main-intro__copy sr-only">
+      <p class="main-intro__eyebrow">Every tale leaves something untold</p>
+      <h1 id="main-intro-title"><span>DARK</span><span>FAIRY TALE</span></h1>
+      <p class="main-intro__description">모든 이야기에는 끝내 말하지 않은 것이 있다</p>
+    </div>
+    <a class="main-intro__scroll" href="#book-scene">OPEN THE BOOK</a>
+  </section>
+<dialog id="main-about" class="intro-about" aria-labelledby="about-title"><h2 id="about-title">ONCE UPON A TIME</h2><p>An archive of familiar fairy tales, told in shadow and wonder.</p><form method="dialog"><button>CLOSE</button></form></dialog><section class="book-scene" id="book-scene" aria-label="동화책 고르기"><iframe class="book-library-frame" id="book-library-frame" src="book-library/index.html?embedded=1&v=20261110-alpha12" title="3D 동화책 선택" loading="eager"></iframe></section>
+<script>
+document.querySelector('[data-about]').addEventListener('click',()=>document.querySelector('#main-about').showModal());
+window.addEventListener('message',event=>{const frame=document.querySelector('#book-library-frame');if(event.origin!==location.origin||event.source!==frame.contentWindow)return;if(event.data==='fairytale:home')document.querySelector('#main-intro').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});});
+</script></body></html>
+
+
+
+
+
+
+
