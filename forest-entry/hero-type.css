@@ -1,0 +1,44 @@
+@font-face{font-family:'Cormorant Garamond';src:url('fonts/CormorantGaramond-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Cormorant Garamond';src:url('fonts/CormorantGaramond-Italic.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap}
+.forest-journey .main-intro__copy.sr-only{left:5%;right:5%;top:50%;width:auto;max-width:none;text-align:center;pointer-events:none;transform:translateY(-50%);filter:none;}
+.forest-journey .main-intro__copy h1{font:italic 400 clamp(54px,8vw,118px)/1.04 'Cormorant Garamond',SUIT,Georgia,serif;letter-spacing:.02em;text-transform:uppercase;color:#eee8dc;text-shadow:none;}
+.forest-journey .main-intro__copy h1 span+span{margin-top:0;}
+.forest-journey .main-intro__copy .main-intro__eyebrow{font:400 16px/1.2 'Cormorant Garamond',SUIT,Georgia,serif;letter-spacing:.32px;margin-bottom:24px;}
+.forest-journey .main-intro__copy .main-intro__description{font:400 12px/1.8 SUIT,sans-serif;letter-spacing:.03em;margin-top:24px;max-width:none;}
+/* Reference: 524px text, 107px from top, centered rules and blue diamond. */
+.forest-journey .journey-caption,.forest-journey .journey-caption.caption-right{left:50%;right:auto;top:107px;bottom:auto;width:524px;max-width:calc(100% - 48px);text-align:center;transform:translateX(-50%);filter:none;opacity:1;pointer-events:none;}
+.forest-journey .journey-caption>span{display:block;font:400 24px/1 'Cormorant Garamond',SUIT,Georgia,serif;letter-spacing:.48px;text-transform:uppercase;color:#eee8dc;text-shadow:none;}
+.forest-journey .journey-caption p{font:400 18px/1.5 SUIT,sans-serif;letter-spacing:.02em;margin:8px 0 0;color:#eee8dc;text-shadow:none;word-break:keep-all;}
+.forest-journey .journey-caption .type-line{display:block;font:inherit;color:inherit;letter-spacing:inherit;opacity:0;filter:blur(40px);}
+.forest-journey .journey-caption:before,.forest-journey .journey-caption:after{content:'';position:absolute;left:-80px;right:-80px;height:1px;background:linear-gradient(90deg,transparent,#c2a9a7 49.4%,transparent 49.4%,transparent 50.6%,#c2a9a7 50.6%,transparent);opacity:var(--frame-alpha,0);}
+.forest-journey .journey-caption:before{top:-16px;}.forest-journey .journey-caption:after{bottom:-14px;}
+.forest-journey .journey-caption .type-diamond{position:absolute;left:calc(50% - 3px);top:-19px;width:7px;height:7px;box-sizing:border-box;border:1px solid #65bfff;transform:rotate(45deg);opacity:var(--frame-alpha,0);background:radial-gradient(#48baff 0 1.5px,transparent 1.6px);}
+.forest-journey :is(.main-intro__scroll,.journey-open strong,.journey-open span,.journey-progress span){font-family:'Cormorant Garamond',SUIT,Georgia,serif;font-style:normal;font-weight:400;text-transform:uppercase;}
+.forest-journey .journey-open strong{font-size:36px;letter-spacing:.32px;}.forest-journey .journey-open small{font-family:SUIT,sans-serif;}
+@media(max-width:767px){.forest-journey .journey-caption,.forest-journey .journey-caption.caption-right{top:80px;max-width:calc(100% - 40px);}.forest-journey .journey-caption:before,.forest-journey .journey-caption:after{left:0;right:0;}.forest-journey .journey-caption>span{font-size:24px;}.forest-journey .journey-caption p{font-size:15px;}.forest-journey .main-intro__copy h1{font-size:clamp(38px,10vw,72px);}.forest-journey .main-intro__copy .main-intro__eyebrow{font-size:14px;}.forest-journey .journey-caption .type-line{filter:none;}}
+@media(prefers-reduced-motion:reduce){.forest-journey .journey-caption .type-line{filter:none!important;}}
+
+/* English above Korean, matching the four-book screen. */
+.forest-journey .journey-caption>span{font-style:italic;line-height:1.25}.forest-journey .journey-caption p{display:block;font-family:SUIT,sans-serif;margin-top:12px}.forest-journey .main-intro__description{display:block;font-family:SUIT,sans-serif}.forest-journey .journey-open strong{font-style:italic}.forest-journey .main-intro__copy .main-intro__eyebrow{font-size:12px}@media(max-width:767px){.forest-journey .main-intro__copy .main-intro__eyebrow{font-size:9px}.forest-journey .journey-caption>span{font-size:22px}.forest-journey .journey-open strong{font-size:30px}}
+
+/* Small station label, one English line, then one Korean line. */
+.forest-journey .journey-caption>span{font:400 11px/1.4 'Cormorant Garamond',serif;letter-spacing:.16em;white-space:nowrap;}
+.forest-journey .journey-caption p.caption-english{font:italic 400 clamp(20px,2vw,26px)/1.2 'Cormorant Garamond',serif;letter-spacing:-.015em;margin:13px 0 0;white-space:nowrap;word-break:normal;}
+.forest-journey .journey-caption p:not(.caption-english){font:300 11px/1.7 SUIT,sans-serif;letter-spacing:.02em;margin:10px 0 0;white-space:nowrap;}
+.forest-journey .main-intro__copy h1{font-size:clamp(38px,6.6vw,90px);white-space:nowrap;}
+.forest-journey .main-intro__copy h1 span{display:inline;}.forest-journey .main-intro__copy h1 span+span{margin-left:.2em;}
+@media(max-width:767px){.forest-journey .journey-caption>span{font-size:10px;}.forest-journey .journey-caption p.caption-english{font-size:clamp(17px,4.6vw,22px);}.forest-journey .journey-caption p:not(.caption-english){font-size:11px;}.forest-journey .main-intro__copy h1{font-size:clamp(32px,8.2vw,64px);}}
+
+/* Restore the earlier width; tighten only the vertical spacing. */
+.forest-journey .journey-caption>span{line-height:1.1;}
+.forest-journey .journey-caption p.caption-english{line-height:1.05;margin-top:6px;}
+.forest-journey .journey-caption p:not(.caption-english){line-height:1.25;margin-top:5px;}
+.forest-journey .journey-caption:before{top:-9px;}
+.forest-journey .journey-caption:after{bottom:-8px;}
+.forest-journey .journey-caption .type-diamond{top:-12px;}
+
+.forest-journey .main-intro__copy h1{font-family:'Cormorant Garamond',SUIT,Georgia,serif;font-weight:400}
+
+
+.forest-journey .journey-caption .type-diamond{box-shadow:0 0 6px #39aaff66}
+

@@ -1,0 +1,11 @@
+.butterfly-scene{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;opacity:1;transform:translateZ(0)}
+.butterfly-scene canvas{display:block;width:100%;height:100%;pointer-events:none}
+/* Equal gaps for each of the three text lines. */
+.forest-journey .main-intro__copy.sr-only{display:flex;flex-direction:column;align-items:center;gap:16px}
+.forest-journey .main-intro__copy :is(.main-intro__eyebrow,h1,.main-intro__description){margin:0}
+.forest-journey .journey-caption{display:flex;flex-direction:column;align-items:center;gap:7px}
+.forest-journey .journey-caption>span,.forest-journey .journey-caption p.caption-english,.forest-journey .journey-caption p:not(.caption-english){margin:0}
+.forest-journey .journey-open{gap:12px}
+.forest-journey .journey-open :is(span,strong,small){margin:0}
+@media(max-width:767px){.forest-journey .main-intro__copy.sr-only{gap:12px}.forest-journey .journey-caption{gap:7px}}
+@media(prefers-reduced-motion:reduce){.butterfly-scene{filter:none!important}}
